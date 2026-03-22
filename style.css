@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Titan+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.navbar {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: #0f172a9c;
+  justify-content: space-between;
+  padding: 18px 50px;
+  backdrop-filter: blur(10px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link::before {
+  content: "";
+  background-color: #3bc0e6;
+  background: solid;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+}
+
+.logo {
+  font-family: "Changa One", sans-serif;
+  background: linear-gradient(45deg, #4783ea, #f10075);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+#home {
+  height: 100vh;
+}
+
+#skills {
+  height: 100vh;
+}
+
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #6366f1, #8b5cf6, #ec4899, #22d3ee);
+  background-size: 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.intro_name {
+  font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.intro_para {
+  max-width: 400px;
+  text-align: center;
+}
+.typing {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: #3bc0e6;
+}
+
+.hero_buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.view_projects_btn,
+.contact_me_btn {
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+.view_projects_btn:hover,
+.contact_me_btn:hover {
+  transform: scale(1.1);
+}
+
+.view_projects_btn {
+  background: linear-gradient(45deg, #4783ea, #f10075);
+  color: white;
+  box-shadow: 0 0 5px rgba(256, 256, 256, 0.5);
+}
+
+.contact_me_btn {
+  background: transparent;
+  border: #3bc0e6 solid 1px;
+  color: #3bc0e6;
+}
+
+.fa-brands,
+.fa-solid {
+  margin: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.fa-brands:hover,
+.fa-solid:hover {
+  transform: scale(1.2);
+}
+a i {
+  color: white;
+}
+.scroll-indicator {
+  position: absolute;
+  width: 25px;
+  height: 40px;
+  bottom: 25px;
+  border: 2px white solid;
+  border-radius: 20px;
+}
+
+.scroll-indicator::after {
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: white;
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+}
+#about {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin: 0 100px;
+}
+
+.about_text {
+  width: 600px;
+  margin-left: 100px;
+}
+.about_text h1 {
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  font-size: 60px;
+}
+
+.about_photo {
+  border-radius: 20px;
+}
+
+.stats {
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.stat h3 {
+  color: skyblue;
+  font-size: 45px;
+}
+
+#projects {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#projects h1 {
+  font-size: 40px;
+  margin: 60px;
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.project {
+  position: relative;
+  height: 380px;
+  width: 440px;
+  background-color: #004bf9;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  transition: all 0.5s ease;
+}
+.project:hover{
+  transform: scale(1.05);
+}
+.project img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.project h3,.project p, .project button{
+  position: relative;
+  top: 220px;
+  margin: 10px;
+}
+.project p{
+  color: rgba(255, 255, 255, 0.614)
+}
+.project button{
+  border: none;
+  padding: 5px 20px;
+  min-width: 90px;
+  color: white;
+  background: transparent;
+  border:#3bc0e6 solid 1px ;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.project button:hover{
+  color: white;
+  transform: scale(1.1);
+  background: linear-gradient(45deg , rgba(255, 0, 0, 0.331) , rgba(0, 0, 255, 0.388))
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 30px;
+}
+.name-input-container, .email-input-container,.message-input-container{
+  position: relative;
+  
+}
+.name-input-container label, .email-input-container label,.message-input-container label{
+  color: rgba(255, 255, 255, 0.607);
+  position: absolute;
+  left: 10px;
+  font-size: 12px;
+  top: -7px;
+  background-color: #0f172a;
+  padding: 0 3px;
+}
+.name-input-container input,.email-input-container input, textarea{
+  height: 40px;
+  border: rgba(255, 255, 255, 0.45) 1px solid;
+  background: transparent;
+  width: 500px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+.name-input-container input:focus,.email-input-container input:focus, textarea:focus{
+  outline: none;
+}
+
+#contact button{
+  width: 500px;
+  height: 40px;
+  color: white;
+  background: linear-gradient(45deg ,rgb(252, 107, 131), hwb(240 28% 0% / 0.998));
+  border-radius: 30px;
+  transition: all 0.3s ease ;
+}
+
+#contact button:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.614);
+}
+
+/*=======================kyaaaa ==============*/
+#skills{
+  padding:80px 20px;
+  text-align:center;
+  }
+  
+  #skills h1{
+  font-size:2.5rem;
+  margin-bottom:30px;
+  }
+  
+  .skills-container{
+  margin:auto;
+  display:flex;
+  gap:10px;
+  }
+  
+  .skill-header{
+    color: black;
+  
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  font-weight:600;
+  }
+  
+  .skill-bar{
+  width:100%;
+  height:8px;
+  background:#2c3a5a;
+  border-radius:10px;
+  overflow:hidden;
+  }
+  
+  .skill-fill{
+  height:100%;
+  border-radius:10px;
+  background:linear-gradient(90deg,#4783ea,#f10075);
+  animation:fillBar 2s ease forwards infinite;
+  }
+
+  .html{ width:90%; }
+.css{ width:85%; }
+.js{ width:70%; }
+.git{ width:60%; }
+.react{ width:40%; }
+
+@keyframes fillBar{
+  from{
+  width:0;
+  }
+  }
+.skill-card{
+  width: 250px;
+  border: black 2px solid;
+  background: rgb(157, 232, 253);
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.699);
+}
