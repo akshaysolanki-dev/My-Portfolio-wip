@@ -1,5 +1,7 @@
 const containerEl = document.querySelector(".typing");
 const aboutEL = document.querySelector(".about");
+const hamburgerEl = document.querySelector(".hamburger");
+const navLinkEl = document.querySelector(".nav-links");
 
 const careers = [
   "Frontend Developer",
@@ -108,3 +110,9 @@ aboutEL.addEventListener("click", () => {
     updateCounter();
   });
 });
+
+
+hamburgerEl.addEventListener("click", ()=>
+navLinkEl.classList.toggle("active")
+
+)
