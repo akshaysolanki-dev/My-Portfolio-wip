@@ -48,10 +48,6 @@ function updateText() {
   setTimeout(updateText, speed);
 }
 
-
-
-
-
 const counters = document.querySelectorAll(".stat h3");
 const aboutSection = document.querySelector("#about");
 
@@ -67,7 +63,7 @@ const observer = new IntersectionObserver(
           const target = +counter.dataset.target;
           let current = 0;
 
-          const steps = 50;
+          const steps = 100;
           const increment = target / steps;
 
           const updateCounter = () => {
@@ -87,13 +83,12 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.6,
-    rootMargin: "-100px 0px -100px 0px",
+    threshold: 0.4,
+    rootMargin: "0px 0px -80px 0px",
   },
 );
 
 observer.observe(aboutSection);
-
 
 hamburgerEl.addEventListener("click", () =>
   navLinkEl.classList.toggle("active"),

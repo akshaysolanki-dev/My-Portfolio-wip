@@ -103,7 +103,7 @@ ul {
 }
 
 #home {
-  height: 110vh;
+  height: 100vh;
   min-height: 110dvh;
 }
 
@@ -141,6 +141,7 @@ ul {
 .intro_para {
   max-width: 400px;
   text-align: center;
+  padding: 15px;
 }
 .typing {
   text-align: center;
@@ -358,6 +359,9 @@ a i {
 @media (max-width: 600px) {
   .project-container {
     grid-template-columns: 1fr;
+  }
+  #projects h1 {
+    font-size: 30px;
   }
 }
 .project p {
