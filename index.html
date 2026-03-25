@@ -64,18 +64,25 @@
       />
 
       <div class="about_text">
-        <h1>About Me</h1>
+        <h1>About Me 👇</h1>
+
         <p>
-          <p>
-            I’m a developer currently focused on frontend development, while actively exploring backend to grow into a full-stack engineer. <br><br>
-            I started coding out of curiosity — fascinated by how simple lines of code can create real, interactive experiences.
-          <br><br>
-            I enjoy building all kinds of projects, from UI-focused designs to logic-driven features, and I’m constantly pushing myself to improve. <br><br>
-            My goal is simple: to become one of the best at what I do, and I’m willing to put in the work to get there.
-          <br><br>
-            I believe in creating real value through my skills and continuously learning, building, and evolving as a developer.
-          </p>
+          I’m a developer currently focused on frontend development, while
+          actively exploring backend to grow into a full-stack engineer.
+          <br /><br />
+          I started coding out of curiosity — fascinated by how simple lines of
+          code can create real, interactive experiences.
+          <br /><br />
+          I enjoy building all kinds of projects, from UI-focused designs to
+          logic-driven features, and I’m constantly pushing myself to improve.
+          <br /><br />
+          My goal is simple: to become one of the best at what I do, and I’m
+          willing to put in the work to get there.
+          <br /><br />
+          I believe in creating real value through my skills and continuously
+          learning, building, and evolving as a developer.
         </p>
+
         <div class="stats">
           <div class="stat">
             <h3 data-target="20">0</h3>
@@ -95,7 +102,7 @@
       </div>
     </section>
     <section id="skills">
-      <h1>Skills</h1>
+      <h1>Skills 👇</h1>
       <div class="skills-container">
         <div class="skills-container">
           <div class="skill-card">
@@ -155,14 +162,23 @@
       </div>
     </section>
     <section id="projects">
-      <h1>Featured Projects</h1>
+      <h1>Featured Projects 👇</h1>
       <div class="project-container">
-        <div class="project_1 project ">
+        <div class="project_1 project">
           <img src="assets/project-thumbnail/20_in_1_thumbnail.png" alt="" />
           <h3>20 in 1 JavaScript Mini Project</h3>
-          <p>A collection of 20 refined JavaScript projects showcasing UI and interaction.</p>
-          <a href="https://akshaysolanki-dev.github.io/20-javascript-mini-projects/"><button>Live</button></a>
-          <a href="https://github.com/akshaysolanki-dev/20-javascript-mini-projects"><button>Github</button></a>
+          <p>
+            A collection of 20 refined JavaScript projects showcasing UI and
+            interaction.
+          </p>
+          <a
+            href="https://akshaysolanki-dev.github.io/20-javascript-mini-projects/"
+            ><button>Live</button></a
+          >
+          <a
+            href="https://github.com/akshaysolanki-dev/20-javascript-mini-projects"
+            ><button>Github</button></a
+          >
         </div>
 
         <div class="project_2 project">
@@ -171,49 +187,65 @@
           <p>
             A next-gen progress tracker focused on streaks, tasks, and insights.
           </p>
-          <button style="
-          cursor:not-allowed;
-        "
-        onmouseover="this.style.background='gray';"
-        onmouseout="this.style.background='transparent';"
-      >Live</button>
-          <a href="https://github.com/akshaysolanki-dev/Streaker"><button>Github</button></a>
+          <button
+            style="cursor: not-allowed"
+            onmouseover="this.style.background = 'gray'"
+            onmouseout="this.style.background = 'transparent'"
+          >
+            Live
+          </button>
+          <a href="https://github.com/akshaysolanki-dev/Streaker"
+            ><button>Github</button></a
+          >
         </div>
         <div class="project_3 project">
           <img src="assets/project-thumbnail/unknown-project.png" alt="" />
           <h3>More Projects Coming Soon</h3>
           <p>Currently building new projects. Stay tuned.</p>
-          <button style="
-          cursor:not-allowed;
-        "
-        onmouseover="this.style.background='gray';"
-        onmouseout="this.style.background='transparent';">Live</button>
-          <button style="
-          cursor:not-allowed;
-        "
-        onmouseover="this.style.background='gray';"
-        onmouseout="this.style.background='transparent';">Github</button>
+          <button
+            style="cursor: not-allowed"
+            onmouseover="this.style.background = 'gray'"
+            onmouseout="this.style.background = 'transparent'"
+          >
+            Live
+          </button>
+          <button
+            style="cursor: not-allowed"
+            onmouseover="this.style.background = 'gray'"
+            onmouseout="this.style.background = 'transparent'"
+          >
+            Github
+          </button>
         </div>
       </div>
     </section>
     <section id="contact">
-      <h1>Contact Me</h1>
-      <div class="name-input-container">
-        <label>Name</label>
-        <input type="text" />
-      </div>
-      <div class="email-input-container">
-        <label>Email</label>
-        <input type="text" />
-      </div>
-      <div class="message-input-container">
-        <label>Message</label>
-        <textarea></textarea>
-      </div>
+      <h1>Contact Me 👇</h1>
+      <form onsubmit="return false;">
+        <div class="name-input-container">
+          <label>Name</label>
+          <input type="text" id="name" />
+        </div>
+        <div class="email-input-container">
+          <label>Email</label>
+          <input type="email" id="email" />
+        </div>
+        <div class="message-input-container">
+          <label>Message</label>
+          <textarea id="message"></textarea>
+        </div>
 
-      <button>Send Message</button>
+        <button type="button" class="submit-btn" onclick="sendMail()">Send Message</button>
+      </form>
+
+      <div class="alternative-contact">
+        
+        <p>or</p>
+        <p>Reach out to me on <a href="https://www.linkedin.com/in/akshay-solanki-233a4a2ab">LinkedIn</a></p>
+      </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

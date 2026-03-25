@@ -48,71 +48,81 @@ function updateText() {
   setTimeout(updateText, speed);
 }
 
-// const counters = document.querySelectorAll(".stat h3");
 
-// counters.forEach((counter) => {
-//   const target = +counter.dataset.target; // convert string to number
-//   let current = 0;
 
-//   const interval = setInterval(() => {
-//     current++;
 
-//     counter.innerHTML = current + "+";
-
-//     if (current === target) {
-//       clearInterval(interval);
-//     }
-//   }, 20); // speed
-// });
 
 const counters = document.querySelectorAll(".stat h3");
+const aboutSection = document.querySelector("#about");
 
-counters.forEach((counter) => {
-  const target = +counter.dataset.target;
-  let current = 0;
+let hasAnimated = false; // to run only once
 
-  const steps = 50; // total animation steps
-  const increment = target / steps;
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
 
-  const updateCounter = () => {
-    current += increment;
+        counters.forEach((counter) => {
+          const target = +counter.dataset.target;
+          let current = 0;
 
-    if (current < target) {
-      counter.innerHTML = Math.ceil(current);
-      requestAnimationFrame(updateCounter);
-    } else {
-      counter.innerHTML = target + "+";
-    }
+          const steps = 50;
+          const increment = target / steps;
+
+          const updateCounter = () => {
+            current += increment;
+
+            if (current < target) {
+              counter.innerHTML = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerHTML = target + "+";
+            }
+          };
+
+          updateCounter();
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.6,
+    rootMargin: "-100px 0px -100px 0px",
+  },
+);
+
+observer.observe(aboutSection);
+
+
+hamburgerEl.addEventListener("click", () =>
+  navLinkEl.classList.toggle("active"),
+);
+(function () {
+  emailjs.init("uVDKwgdEop2X52nkj");
+})();
+
+function sendMail() {
+  let params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
   };
 
-  updateCounter();
-});
-
-aboutEL.addEventListener("click", () => {
-  counters.forEach((counter) => {
-    const target = +counter.dataset.target;
-    let current = 0;
-
-    const steps = 50; // total animation steps
-    const increment = target / steps;
-
-    const updateCounter = () => {
-      current += increment;
-
-      if (current < target) {
-        counter.innerHTML = Math.ceil(current);
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.innerHTML = target + "+";
-      }
-    };
-
-    updateCounter();
-  });
-});
-
-
-hamburgerEl.addEventListener("click", ()=>
-navLinkEl.classList.toggle("active")
-
-)
+  emailjs
+    .send("service_iyut4jo", "template_s1yjscs", params)
+    .then(function () {
+      const btn = document.querySelector(".submit-btn");
+      btn.innerHTML = "Message Sent ✅";
+      setTimeout(() => {
+        btn.innerHTML = "Send Message";
+      }, 2000);
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+    })
+    .catch((error) => {
+      alert("Failed to send ❌");
+      console.log(error);
+    });
+}
