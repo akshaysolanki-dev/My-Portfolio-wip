@@ -108,8 +108,6 @@ ul {
   height: 100vh;
 }
 
-
-
 .hero {
   position: relative;
   display: flex;
@@ -233,43 +231,49 @@ a i {
   }
 }
 #about {
-  height: 100ch;
+  position: relative;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  justify-items: center;
+  justify-items: left;
   align-items: center;
-  margin-top: 50px;
-  padding: 0 20px 0 20px;
+  padding: 70px 20px;
   gap: clamp(10px, 3vw, 20vh);
 }
 
-@media (max-width: 800px) {
-  #about {
-    align-items: normal;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
-    text-align: justify;
-  }
-}
 
 .about_text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   width: clamp(300px, 40vw, 500px);
   max-width: 800px;
 }
 .about_text h1 {
+  font-size: 60px;
   font-family:
     "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
     Arial, sans-serif;
   margin-bottom: 20px;
 }
+@media (max-width: 800px) {
+  #about {
+    align-items: normal;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    text-align: left;
+    justify-items: center;
+  }
+  .about_text h1{
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
 .about_text p {
-  width: clamp(30px, 100%, 600px);
+  width: clamp(30px, 100%, 700px);
 }
 .about_photo {
-  margin-top: 80px;
   border-radius: 20px;
   width: clamp(300px, 40vw, 500px);
   height: auto;
@@ -288,6 +292,9 @@ a i {
   .stats {
     justify-content: center;
   }
+  .about_text p {
+    text-align: justify;
+  }
 }
 
 #projects {
@@ -303,7 +310,7 @@ a i {
 
 .project-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   width: 80%;
   max-width: 1000px;
@@ -331,26 +338,22 @@ a i {
   width: 100%;
   height: 40%;
   object-fit: cover;
-
 }
 
 .project h3,
 .project p,
 .project button {
-  
   position: relative;
   margin: 10px;
   padding: 15px;
-
 }
-.project h3{
+.project h3 {
   padding-top: 180px;
 }
 @media (max-width: 600px) {
   .project-container {
     grid-template-columns: 1fr;
   }
-
 }
 .project p {
   color: rgba(255, 255, 255, 0.614);
