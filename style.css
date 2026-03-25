@@ -232,7 +232,6 @@ a i {
 }
 #about {
   position: relative;
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-items: left;
